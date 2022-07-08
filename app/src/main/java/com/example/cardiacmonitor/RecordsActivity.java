@@ -1,11 +1,11 @@
 package com.example.cardiacmonitor;
 
-import android.app.AlertDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,14 +17,10 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class RecordsActivity extends AppCompatActivity {
 
@@ -178,7 +174,7 @@ public class RecordsActivity extends AppCompatActivity {
                            @Override
                            public void onClick(View view) {
                                //Toast.makeText(getActivity(),"no",Toast.LENGTH_SHORT).show();
-                               alertDialog.dismiss();
+                               alertDialog1.dismiss();
                            }
                        });
 

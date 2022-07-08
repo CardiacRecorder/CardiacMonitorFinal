@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="300dp"
     android:padding="10dp"
+    android:id="@+id/action_popUp"
     android:layout_margin="20dp"
     android:orientation="vertical"
     android:gravity="center"

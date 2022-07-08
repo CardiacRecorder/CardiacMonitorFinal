@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
@@ -126,9 +126,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         };
 
         int[] toViewId = new int[]{
-               R.id.item_id,R.id.systol,R.id.diastol,R.id.pressure_stat,R.id.pulse,R.id.pulse_status,R.id.date,R.id.time,R.id.comments
+               R.id.item_id, R.id.systol, R.id.diastol, R.id.pressure_stat, R.id.pulse, R.id.pulse_status, R.id.date, R.id.time, R.id.comments
         };
-        SimpleCursorAdapter contactAdapter = new SimpleCursorAdapter(context,R.layout.sample_list,cursor,fromFieldNames,toViewId);
+        SimpleCursorAdapter contactAdapter = new SimpleCursorAdapter(context, R.layout.sample_list,cursor,fromFieldNames,toViewId);
         return contactAdapter;
 
     }

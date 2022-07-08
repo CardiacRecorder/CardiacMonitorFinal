@@ -1,12 +1,12 @@
 package com.example.cardiacmonitor;
 
 import android.animation.ValueAnimator;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +22,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -46,8 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         binding.progressCounter.setText("0");
         binding.status.setText("");
 
-
-
+        
         binding.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

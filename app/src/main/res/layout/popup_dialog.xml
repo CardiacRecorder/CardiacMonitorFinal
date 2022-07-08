@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:id="@+id/popUpDialog"
     android:layout_margin="20dp"
     >
 
@@ -30,6 +31,7 @@
                  android:layout_height="wrap_content"
                  android:layout_marginLeft="20dp"
                  android:layout_marginTop="20dp"
+                 android:inputType="number"
                  android:layout_marginRight="20dp"
                  android:background="@drawable/edit_text_bg"
                  android:fontFamily="@font/comfortaa"
@@ -42,6 +44,7 @@
                  android:layout_height="wrap_content"
                  android:layout_marginLeft="20dp"
                  android:layout_marginTop="20dp"
+                 android:inputType="number"
                  android:layout_marginRight="20dp"
                  android:background="@drawable/edit_text_bg"
                  android:fontFamily="@font/comfortaa"
@@ -53,6 +56,7 @@
                  android:layout_height="wrap_content"
                  android:layout_marginLeft="20dp"
                  android:layout_marginTop="20dp"
+                 android:inputType="number"
                  android:layout_marginRight="20dp"
                  android:background="@drawable/edit_text_bg"
                  android:fontFamily="@font/comfortaa"
