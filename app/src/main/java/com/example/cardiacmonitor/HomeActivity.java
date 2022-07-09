@@ -123,7 +123,7 @@ public class HomeActivity extends AppCompatActivity {
                             pulse.setError("Required");
                             return;
                         }
-                        /*all these conditions are used for indicating the flag based on ones's blood pressure*/
+                        /*all these conditions are used for indicating the flag based on ones's pulse rate*/
                         if(Integer.parseInt(pulse_v)>=60 && Integer.parseInt(pulse_v)<=80)
                         {
                             pulse_status+= "normal";
@@ -132,7 +132,7 @@ public class HomeActivity extends AppCompatActivity {
                         {
                             pulse_status+= "exceptional";
                         }
-
+                        /*all these conditions are used for indicating the flag based on ones's blood pressure*/
                         int x = Integer.parseInt(sys_v);
                         int y = Integer.parseInt(dias_v);
 
