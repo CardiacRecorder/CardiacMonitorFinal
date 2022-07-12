@@ -22,6 +22,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * this class mainly implemets the user interface of recordsactivity
+ * this class also works as an inteface between records and database helper
+ * this class uses instance of record and record list classes
+ */
 public class RecordsActivity extends AppCompatActivity {
 
     MyDatabaseHelper myDatabaseHelper;
@@ -38,14 +43,17 @@ public class RecordsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        myDatabaseHelper = new MyDatabaseHelper(RecordsActivity.this);
-        SQLiteDatabase sqLiteDatabase =  myDatabaseHelper.getWritableDatabase();
+        myDatabaseHelper = new MyDatabaseHelper(RecordsActivity.this);//calling constructor for mydatabase helper class
+        SQLiteDatabase sqLiteDatabase =  myDatabaseHelper.getWritableDatabase();//this opens a sqlite database that will be used for reading and writing records datas
 
         listView = findViewById(R.id.list_view);
         no_text = findViewById(R.id.no_text);
 
-        loadData();
-
+        loadData();//This is used to read rows from a recordlist into database table at a very high speed
+        /**
+         * this implemets a setOnItemClickListener if we click on any item in record list
+         * we can either delete a record or update it
+         */
        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -56,8 +64,10 @@ public class RecordsActivity extends AppCompatActivity {
                // Toast.makeText(RecordsActivity.this,"id: "+_id,Toast.LENGTH_SHORT).show();
 
 
-               AlertDialog.Builder builder = new AlertDialog.Builder(RecordsActivity.this);
-
+               AlertDialog.Builder builder = new AlertDialog.Builder(RecordsActivity.this);//this creates a builder for an alert dialog that uses the recordactivity alert dialog theme.
+               /**
+                * an action popup will appear containing an update and delete button
+                */
                View view2 = getLayoutInflater().inflate(R.layout.action_popup_dialog, null);
 
                Button update, delete;
@@ -66,16 +76,18 @@ public class RecordsActivity extends AppCompatActivity {
                delete = view2.findViewById(R.id.delete);
 
                builder.setView(view2);
-               AlertDialog alertDialog = builder.create();
-               alertDialog.setCanceledOnTouchOutside(false);
-
+               AlertDialog alertDialog = builder.create();//this returns an AlertDialog object with the arguments supplied to it
+               alertDialog.setCanceledOnTouchOutside(false);//if we touch anything outside the alertdialogue it will cancel out
+               /**
+                * this implements setOnClickListener for update button
+                */
                update.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View view) {
 
                        AlertDialog.Builder builder = new AlertDialog.Builder(RecordsActivity.this);
 
-                       View view2 = getLayoutInflater().inflate(R.layout.popup_dialog, null);
+                       View view2 = getLayoutInflater().inflate(R.layout.popup_dialog, null);//a popup dialouge will appear with all of record fields
 
                        EditText sys = view2.findViewById(R.id.systolic);
                        EditText dias = view2.findViewById(R.id.diastolic);
@@ -87,21 +99,23 @@ public class RecordsActivity extends AppCompatActivity {
                        Button yes = (Button) view2.findViewById(R.id.yes_btn);
                        Button no = (Button) view2.findViewById(R.id.no_btn);
 
-                       Calendar calendar = Calendar.getInstance();
+                       Calendar calendar = Calendar.getInstance();/* used to get a calendar using the current time zone and locale of the system*/
 
-                       Date currentDate = calendar.getTime();
-                       String date_v = DateFormat.getDateInstance(DateFormat.FULL).format(currentDate);
-                       date.setText(date_v);
+                       Date currentDate = calendar.getTime();/*this returns a Date object that represents this Calendar's time value.*/
+                       String date_v = DateFormat.getDateInstance(DateFormat.FULL).format(currentDate);/*to get the date in given format*/
+                       date.setText(date_v);/*automatic filling up date in a record from system*/
 
                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a");
-                       String time_v = simpleDateFormat.format(calendar.getTime());
-                       time.setText(time_v);
+                       String time_v = simpleDateFormat.format(calendar.getTime());/*to get the time in given format*/
+                       time.setText(time_v);/*automatic filling up time in a record from system*/
 
                        builder.setView(view2);
 
                        AlertDialog alertDialog1 = builder.create();
-                       alertDialog1.setCanceledOnTouchOutside(false);
-
+                       alertDialog1.setCanceledOnTouchOutside(false);/*if we touch anything outside of alertdialog popup,it will close*/
+                       /**
+                        * this click listener is used for action if we click on yes button
+                        */
                        yes.setOnClickListener(new View.OnClickListener() {
                            @Override
                            public void onClick(View view) {
@@ -119,26 +133,26 @@ public class RecordsActivity extends AppCompatActivity {
                                time.setText("");
                                comment.setText("");
 
-                               if (TextUtils.isEmpty(sys_v)) {
+                               if (TextUtils.isEmpty(sys_v))/*this checks if systol field is empty*/ {
                                    sys.setError("Required");
                                    return;
-                               } else if (TextUtils.isEmpty(dias_v)) {
+                               } else if (TextUtils.isEmpty(dias_v))/*this checks if diastol field is empty*/ {
                                    dias.setError("Required");
                                    return;
-                               } else if (TextUtils.isEmpty(comments_v)) {
+                               } else if (TextUtils.isEmpty(comments_v)) /*this checks if comment field is empty*/{
                                    comment.setError("Required");
                                    return;
-                               } else if (TextUtils.isEmpty(pulse_v)) {
+                               } else if (TextUtils.isEmpty(pulse_v))/*this checks if pulse field is empty*/ {
                                    pulse.setError("Required");
                                    return;
                                }
-
+                               /*all these conditions are used for indicating the flag based on ones's pulse rate*/
                                if (Integer.parseInt(pulse_v) >= 60 && Integer.parseInt(pulse_v) <= 80) {
                                    pulse_status += "normal";
                                } else {
                                    pulse_status += "exceptional";
                                }
-
+                               /*all these conditions are used for indicating the flag based on ones's blood rate*/
                                int x = Integer.parseInt(sys_v);
                                int y = Integer.parseInt(dias_v);
 
@@ -150,10 +164,10 @@ public class RecordsActivity extends AppCompatActivity {
                                    pressure_status += "low";
                                }
 
-
+                               /*invoking insertdata method of  myDatabaseHelper class which is used to insert an entry into database*/
                                boolean id = myDatabaseHelper.updateData(_id, sys_v, dias_v, pressure_status, pulse_v, pulse_status, date_v, time_v, comments_v);
 
-
+                               /*if successfully inserted data in databse the method will return true*/
                                if (id) {
                                    Toast.makeText(RecordsActivity.this, "data is updated", Toast.LENGTH_SHORT).show();
 
@@ -169,7 +183,9 @@ public class RecordsActivity extends AppCompatActivity {
 
                            }
                        });
-
+                       /**
+                        * if we click on no button ,alert dialog popup will be dismissed
+                        */
                        no.setOnClickListener(new View.OnClickListener() {
                            @Override
                            public void onClick(View view) {
@@ -182,11 +198,16 @@ public class RecordsActivity extends AppCompatActivity {
 
                    }
                });
-
+               /**
+                * this implements setOnClickListener for update button
+                */
                delete.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View view) {
                          long f = myDatabaseHelper.deleteData(_id);
+                         /*
+                           if record is successfully deleted from database daletedata method will return 1,else 0
+                          */
                          if(f>0)
                          {
                              Toast.makeText(RecordsActivity.this,"Data is deleted",Toast.LENGTH_SHORT).show();
@@ -211,23 +232,28 @@ public class RecordsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * this method fetch all records from database show them in record list
+     */
     public void loadData()
     {
         simpleCursorAdapter = myDatabaseHelper.populateListViewFromDB();
         listView.setAdapter(simpleCursorAdapter);
 
        // Toast.makeText(RecordsActivity.this,"::"+listView.getCount(),Toast.LENGTH_SHORT).show();
-
+        /*if there is no record ,then no records will be shown in screen,
+        else list view will be shown
+         */
         if(listView.getCount()<1)
         {
             no_text.setText("No Records");
-            no_text.setVisibility(View.VISIBLE);
-            listView.setVisibility(View.GONE);
+            no_text.setVisibility(View.VISIBLE);//no record text will be shown
+            listView.setVisibility(View.GONE);//list will be hidden
         }
         else
         {
-            no_text.setVisibility(View.GONE);
-            listView.setVisibility(View.VISIBLE);
+            no_text.setVisibility(View.GONE);//no record text will be hidden
+            listView.setVisibility(View.VISIBLE);//list will be shown
         }
     }
 
