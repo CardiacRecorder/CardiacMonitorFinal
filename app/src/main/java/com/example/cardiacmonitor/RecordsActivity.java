@@ -199,7 +199,7 @@ public class RecordsActivity extends AppCompatActivity {
                    }
                });
                /**
-                * this implements setOnClickListener for update button
+                * this implements setOnClickListener for delete button
                 */
                delete.setOnClickListener(new View.OnClickListener() {
                    @Override
