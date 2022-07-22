@@ -42,17 +42,18 @@ public class RecordsActivityUiTest {
         onView(withId(R.id.list_view)).check(matches(isDisplayed()));
 //        onData(anything()).inAdapterView(withId(R.id.list_view)).atPosition(1).
 //                check(matches((withText("Systol"))));
-        onData(anything()).inAdapterView(withId(R.id.list_view)).atPosition(0).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.list_view)).atPosition(0).perform(click());/*it updates the first record of the list*/
         onView(withId(R.id.action_popUp)).check(matches(isDisplayed()));
         onView(withId(R.id.update)).perform(click());
         onView(withId(R.id.popUpDialog)).check(matches(isDisplayed()));
         onView(withId(R.id.no_btn)).perform(click());
-        onView(withId(R.id.action_popUp)).check(matches(isDisplayed()));
+        onView(withId(R.id.action_popUp)).check(matches(isDisplayed()));/*to check if after clicking no button it goes back to action_popup dialog*/
         onView(withId(R.id.update)).perform(click());
+        /*fill up blood pressure and pulse rate fields*/
         onView(withId(R.id.systolic)).perform(ViewActions.typeText("100"));
         onView(withId(R.id.diastolic)).perform(ViewActions.typeText("60"));
         onView(withId(R.id.pulse_rate)).perform(ViewActions.typeText("55"));
-
+        /*get time and date from system*/
         Calendar calendar = Calendar.getInstance();
         Date currentDate = calendar.getTime();
         String date_v = DateFormat.getDateInstance(DateFormat.FULL).format(currentDate);
@@ -73,9 +74,9 @@ public class RecordsActivityUiTest {
     public void testListAndDelete()
     {
         onView(withId(R.id.list_view)).check(matches(isDisplayed()));
-        onData(anything()).inAdapterView(withId(R.id.list_view)).atPosition(0).perform(click());
+        onData(anything()).inAdapterView(withId(R.id.list_view)).atPosition(0).perform(click());/*pressing first record of the list*/
         onView(withId(R.id.action_popUp)).check(matches(isDisplayed()));
-        onView(withId(R.id.delete)).perform(click());
+        onView(withId(R.id.delete)).perform(click());/*it deletes the first record of the list*/
     }
 
 

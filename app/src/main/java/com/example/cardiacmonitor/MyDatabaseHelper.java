@@ -37,6 +37,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         this.context = context;
     }
 
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -65,12 +66,25 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * this method is called whenever we try to add a new record
+     * @param systolic
+     * @param diastolic
+     * @param pre_stat
+     * @param pulse
+     * @param pul_stat
+     * @param date
+     * @param time
+     * @param comments
+     * @return id
+     */
     public long insertData(String systolic,String diastolic,String pre_stat,String pulse,String pul_stat,String date,String time,String comments)
     {
         SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-
+        /*the values are inserted on corresponding columns
+         */
         contentValues.put(SYSTOLIC,systolic);
         contentValues.put(DIASTOLIC,diastolic);
         contentValues.put(PRESURE_STATUS,pre_stat);
@@ -79,12 +93,25 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DATE,"Date: "+date);
         contentValues.put(TIME,"Time: "+time);
         contentValues.put(COMMENTS,"Comments: "+comments);
-
+        /*id represents if data is inserted properly in database*/
         long id = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
 
         return id;
     }
 
+    /**
+     * this method is called whenever we try to update an existing record
+     * @param id
+     * @param systolic
+     * @param diastolic
+     * @param pre_stat
+     * @param pulse
+     * @param pul_stat
+     * @param date
+     * @param time
+     * @param comments
+     * @return bool
+     */
     public Boolean updateData(String id,String systolic,String diastolic,String pre_stat,String pulse,String pul_stat,String date,String time,String comments)
     {
 
@@ -92,6 +119,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
+        /*the values are inserted on corresponding columns
+         */
         contentValues.put(ID,id);
         contentValues.put(SYSTOLIC,systolic);
         contentValues.put(DIASTOLIC,diastolic);
@@ -107,13 +136,21 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
        return true;
     }
 
+    /**
+     * this method is called whenever we try to delete an existing record
+     * @param id
+     * @return status of executed query
+     */
     public long deleteData(String id)
     {
         SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();
-        return  sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{id});
+        return  sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{id});/*returns null or zero if data is not deleted from database*/
     }
 
-
+    /**
+     * this method returns all the records from database
+     * @return simpleCursorAdaptor
+     */
     public SimpleCursorAdapter populateListViewFromDB() {
 
         SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();
