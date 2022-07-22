@@ -147,7 +147,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return  sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{id});/*returns null or zero if data is not deleted from database*/
     }
 
-
+    /**
+     * this method returns all the records from database
+     * @return simpleCursorAdaptor
+     */
     public SimpleCursorAdapter populateListViewFromDB() {
 
         SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();

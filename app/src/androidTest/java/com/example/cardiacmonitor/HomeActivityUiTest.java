@@ -75,7 +75,7 @@ public class HomeActivityUiTest {
     @Test
     public void testRecordButton(){
         onView(withId(R.id.records)).perform(click());
-        onView(withText("Records")).check(matches(isDisplayed()))
+        onView(withText("Records")).check(matches(isDisplayed()));
     }
 
 

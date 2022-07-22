@@ -6,7 +6,10 @@ import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 
 public class RecordsActivityTest {
-
+    /**
+     * this method is to adding a mockrecord in the record list which will be used for testing
+     * @return RecordList
+     */
     private RecordList mockRecordList()
     {
         RecordList recordList = new RecordList();
@@ -14,12 +17,18 @@ public class RecordsActivityTest {
         return recordList;
     }
 
-
+    /**
+     * for creating a mock record
+     * @return Record;
+     */
     private Record mockRecord()
     {
         return new Record("120","80","normal","60","normal","Thursday,7 July 2022","05:01 pm","sitting");
     }
 
+    /**
+     * this method is for testing if a mockrecord is added properly in record list
+     */
     @Test
     public void testAddRecord()
     {
@@ -35,6 +44,10 @@ public class RecordsActivityTest {
         assertTrue(recordList.getRecords().contains(record));
     }
 
+    /**
+     * exception will occur if a duplicate record is added
+     * this method is to check if this exception is thrown properly
+     */
     @Test
     public void testAddException()
     {
@@ -50,6 +63,9 @@ public class RecordsActivityTest {
         });
     }
 
+    /**
+     * this method is to test if a record can be fetcehd properly
+     */
     @Test
     public void testGetRecords()
     {
@@ -68,6 +84,10 @@ public class RecordsActivityTest {
         assertEquals(0,record2.compareTo(recordList.getRecords().get(2)));
 
     }
+
+    /**
+     * this method is to test if a record is deleted from record list properly
+     */
     @Test
     public void testdelete()
     {
@@ -80,6 +100,10 @@ public class RecordsActivityTest {
         assertTrue(!recordList.getRecords().contains(record1));
 
     }
+    /**
+     * exception will occur if a nonexistent record is being tried to delete
+     * this method is to check if this exception is thrown properly
+     */
     @Test
     public void testDeleteException() {
         /*creating and initializing objects for citylist and city class*/
@@ -95,6 +119,10 @@ public class RecordsActivityTest {
             recordList.delete(record1);
         });
     }
+
+    /**
+     * to test the rowcount of record list
+     */
     @Test
     public void testcount(){
         /*creating and initializing objects for citylist and city class*/
