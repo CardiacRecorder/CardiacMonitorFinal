@@ -169,4 +169,67 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return contactAdapter;
 
     }
+
+    /**
+     * this method is for database unit test
+     * this method checks if a data exists or not in the database by using unique id
+     * @param id
+     * @return bool
+     */
+    public boolean checkDataExistsOrNot(Long id) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        String Query = "Select * from " + TABLE_NAME + " where " + ID + " = " + Long.toString(id);
+        Cursor cursor = sqLiteDatabase.rawQuery(Query, null);
+        if (cursor.getCount() <= 0) {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
+
+    /**
+     * this method is to check all the column values of a particular record used for database unit testing
+     * @param id
+     * @param sys
+     * @param dias
+     * @param pressure_status
+     * @param pulse
+     * @param pulse_status
+     * @param date
+     * @param time
+     * @param comments
+     * @return bool
+     */
+    public boolean checkContent(String id, String sys, String dias, String pressure_status, String pulse, String pulse_status, String date, String time, String comments) {
+        SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();
+        String[] columns = {MyDatabaseHelper.SYSTOLIC, MyDatabaseHelper.DIASTOLIC, MyDatabaseHelper.PRESURE_STATUS, MyDatabaseHelper.PULSE, MyDatabaseHelper.PULSE_STATUS, MyDatabaseHelper.DATE, MyDatabaseHelper.TIME, MyDatabaseHelper.COMMENTS};
+        Cursor cursor = sqLiteDatabase.query(MyDatabaseHelper.TABLE_NAME, columns, MyDatabaseHelper.ID+" = '"+id+"'", null, null, null, null);
+        while (cursor.moveToNext()) {
+            int i1 = cursor.getColumnIndex(MyDatabaseHelper.SYSTOLIC);
+            int i2 = cursor.getColumnIndex(MyDatabaseHelper.DIASTOLIC);
+            int i3 = cursor.getColumnIndex(MyDatabaseHelper.PRESURE_STATUS);
+            int i4 = cursor.getColumnIndex(MyDatabaseHelper.PULSE);
+            int i5 = cursor.getColumnIndex(MyDatabaseHelper.PULSE_STATUS);
+            int i6 = cursor.getColumnIndex(MyDatabaseHelper.DATE);
+            int i7 = cursor.getColumnIndex(MyDatabaseHelper.TIME);
+            int i8 = cursor.getColumnIndex(MyDatabaseHelper.COMMENTS);
+
+            String sys1 = cursor.getString(i1);
+            String dia1 = cursor.getString(i2);
+            String bp_sta1 = cursor.getString(i3);
+            String pulse1 = cursor.getString(i4);
+            String pulse_sta1 = cursor.getString(i5);
+            String date1 = cursor.getString(i6);
+            String time1 = cursor.getString(i7);
+            String comm1 = cursor.getString(i8);
+
+            if (sys != sys1 || dias != dia1 || pressure_status != bp_sta1 || pulse != pulse1 || pulse_status != pulse1 || date != date1 || time1 != time || comments != comm1) {
+                cursor.close();
+                return false;
+            }
+        }
+        cursor.close();
+        return true;
+    }
 }
