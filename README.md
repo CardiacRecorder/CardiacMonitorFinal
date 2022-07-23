@@ -35,23 +35,6 @@ Here sqlite database is used to store previous data.During adding any new entry 
   src="https://user-images.githubusercontent.com/107655760/180608044-dea3cb4a-f526-4a99-8094-1ca6b89142be.png"
   alt="Alt text"
   title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
-  src="https://user-images.githubusercontent.com/107655760/176023953-c0f5a610-e0fb-4fb2-97e3-6759987caff8.png"
-  alt="Alt text"
-  title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px">
-   <img
-  src="https://user-images.githubusercontent.com/107655760/176024043-af3a996a-12e2-4802-ae42-60e2b70d093a.png"
-  alt="Alt text"
-  title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"> <img
-  src="https://user-images.githubusercontent.com/107655760/176024122-4a423cae-1960-49ba-b4fc-64111ed3e4ea.png"
-  alt="Alt text"
-  title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
-  src="https://user-images.githubusercontent.com/107655760/176024250-b32b089f-4741-4377-82db-8e93e45ae756.png"
-  alt="Alt text"
-  title="Optional title"
   style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px">
   
   
