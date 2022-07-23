@@ -221,8 +221,9 @@ public class HomeActivity extends AppCompatActivity {
     /**
      *implement the progress bar to show pulse rate
      * @param s
+     * s which is starting value of progress bar
      * @param e
-     * @return void
+     * e which is the ending value of progress bar
      */
     public void startAnimatedCounter(int s,int e)
     {

@@ -9,16 +9,15 @@ import android.os.Bundle;
  * this class implements the splash screen
  */
 public class SplashScreenActivity extends AppCompatActivity {
-
+    /**
+     * this is used for generating a delay and switch the screen to home screen
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
         getSupportActionBar().hide();
-        /**
-         * this is used for generating a delay and switch the screen to home screen
-         */
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
