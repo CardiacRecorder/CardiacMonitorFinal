@@ -10,29 +10,29 @@ Here sqlite database is used to store previous data.During adding any new entry 
   src="https://user-images.githubusercontent.com/107655760/180606993-c842963f-fe2f-4744-a02d-e05ceab39a38.png"
   alt="Alt text"
   title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
+  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"> <img
   src="https://user-images.githubusercontent.com/107655760/180607232-b4c6e0c5-f236-4f72-9c6d-5c5b6385802e.png"
   alt="Alt text"
   title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
-  src=https://user-images.githubusercontent.com/107655760/180607276-d5b47429-220a-45c5-a712-b76097b1c782.png"
+  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"> <img
+  src="https://user-images.githubusercontent.com/107655760/180607491-0980af4e-1eb8-47c3-bcdd-74fdfb342b0a.png"
   alt="Alt text"
   title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
-  src="https://user-images.githubusercontent.com/107655760/176022252-406cdf0e-23ce-42cd-9fda-c35ca1adf854.png"
+  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"> <img
+  src="https://user-images.githubusercontent.com/107655760/180607766-c007c45a-a046-4d6a-90d8-c2943b06a022.png"
   alt="Alt text"
   title="Optional title"
     style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px">
   <img
-  src="https://user-images.githubusercontent.com/107655760/176022410-2e2a1d52-c752-4eaa-9d1c-fc308493b63d.png"
+  src="https://user-images.githubusercontent.com/107655760/180607810-fb2e2333-4895-4c92-8a9c-389646ca12e5.png"
+  alt="Alt text"
+  title="Optional title"
+  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"> <img
+  src="https://user-images.githubusercontent.com/107655760/180608020-733d4b21-d7a0-432c-92ba-20a85e01dd4e.png"
   alt="Alt text"
   title="Optional title"
   style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
-  src="https://user-images.githubusercontent.com/107655760/176023244-c458eaf5-eb91-4b83-b70a-264914154074.png"
-  alt="Alt text"
-  title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
-  src="https://user-images.githubusercontent.com/107655760/176023824-a3ad3b1d-6a74-495c-bbaf-091791c3fb41.png"
+  src="https://user-images.githubusercontent.com/107655760/180608044-dea3cb4a-f526-4a99-8094-1ca6b89142be.png"
   alt="Alt text"
   title="Optional title"
   style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
@@ -55,6 +55,9 @@ Here sqlite database is used to store previous data.During adding any new entry 
   style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px">
   
   
+
+
+
 
 
 
