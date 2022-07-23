@@ -10,7 +10,7 @@ Here sqlite database is used to store previous data.During adding any new entry 
   src="https://user-images.githubusercontent.com/107655760/180606993-c842963f-fe2f-4744-a02d-e05ceab39a38.png"
   alt="Alt text"
   title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:300px; width:200px"><img
+  style="position:flex display: inline-block; margin: 0 auto; height:400px; width:300px"><img
   src="https://user-images.githubusercontent.com/107655760/180607232-b4c6e0c5-f236-4f72-9c6d-5c5b6385802e.png"
   alt="Alt text"
   title="Optional title"
