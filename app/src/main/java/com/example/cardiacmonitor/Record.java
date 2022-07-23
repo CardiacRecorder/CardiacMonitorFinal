@@ -45,7 +45,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of systolic
-     * @return void
+     * @param systolic set systolic value
      */
     public void setSystolic(String systolic) {
         this.systolic = systolic;
@@ -59,7 +59,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of systolic
-     * @return void
+     * @param diastolic set diastolic value
      */
     public void setDiastolic(String diastolic) {
         this.diastolic = diastolic;
@@ -73,7 +73,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of pressure_status
-     * @return void
+     * @param pressure_status set pressure_status value
      */
     public void setPressure_status(String pressure_status) {
         this.pressure_status = pressure_status;
@@ -87,7 +87,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of pulse
-     * @return void
+     * @param pulse set pulse value
      */
     public void setPulse(String pulse) {
         this.pulse = pulse;
@@ -101,7 +101,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of pulse_status
-     * @return void
+     * @param pulse_status set pulse_status value
      */
     public void setPulse_status(String pulse_status) {
         this.pulse_status = pulse_status;
@@ -115,7 +115,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of date
-     * @return void
+     * @param date set date value
      */
     public void setDate(String date) {
         this.date = date;
@@ -129,7 +129,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of time
-     * @return void
+     * @param time set time value
      */
     public void setTime(String time) {
         this.time = time;
@@ -143,7 +143,7 @@ public class Record implements Comparable<Record>{
     }
     /**
      * setter of comment
-     * @return void
+     * @param comments set comments value
      */
     public void setComments(String comments) {
         this.comments = comments;
@@ -151,7 +151,7 @@ public class Record implements Comparable<Record>{
 
     /**
      * this method is used to compare two records using their systolic value
-     * @param record
+     * @param record receive a record to compare
      * @return int
      */
     @Override

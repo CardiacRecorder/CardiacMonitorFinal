@@ -173,7 +173,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     /**
      * this method is for database unit test
      * this method checks if a data exists or not in the database by using unique id
-     * @param id
+     * @param id id for checkDataExistsOrNot
      * @return bool
      */
     public boolean checkDataExistsOrNot(Long id) {
@@ -190,16 +190,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * this method is to check all the column values of a particular record used for database unit testing
-     * @param id
-     * @param sys
-     * @param dias
-     * @param pressure_status
-     * @param pulse
-     * @param pulse_status
-     * @param date
-     * @param time
-     * @param comments
-     * @return bool
+     * @param id id of the item
+     * @param sys systol value
+     * @param dias diastol value
+     * @param pressure_status pressure status
+     * @param pulse pulse value
+     * @param pulse_status pulse status
+     * @param date date of insert value
+     * @param time time of  insert value
+     * @param comments comments of measurement
+     * @return bool value
      */
     public boolean checkContent(String id, String sys, String dias, String pressure_status, String pulse, String pulse_status, String date, String time, String comments) {
         SQLiteDatabase sqLiteDatabase =  this.getWritableDatabase();

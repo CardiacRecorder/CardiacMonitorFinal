@@ -29,7 +29,7 @@ public class RecordList {
     /**
      * this returns an instance of sorted record list
      * sort is based on first attribute by default
-     * @return list<record> a list of records
+     * @return a list of records
      */
     public List<Record>getRecords()
     {
@@ -38,11 +38,6 @@ public class RecordList {
         return recordList;
     }
 
-    /**
-     * this returns an instance of sorted record list
-     * @param x
-     * @return list<record>
-     */
     public List<Record> getRecords(int x)
     {
         List<Record>recordList = records;
@@ -52,7 +47,7 @@ public class RecordList {
     /**
      * this method is used for deleting a particular record
      * if the record doesnt exist,it will throw an exception
-     * @param record
+     * @param record a record that need to be deleted
      */
     public void delete(Record record)
     {
