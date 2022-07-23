@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * this class represents a list of records
+/*
+ this class represents a list of records
  */
 public class RecordList {
 
@@ -15,7 +15,7 @@ public class RecordList {
     /**
      * this method is used to add any new record
      * if record already exists,it will throw an exception
-     * @param record
+     * @param record a new record
      */
     public void addRecords(Record record)
     {
@@ -29,7 +29,7 @@ public class RecordList {
     /**
      * this returns an instance of sorted record list
      * sort is based on first attribute by default
-     * @return list<record>
+     * @return list<record> a list of records
      */
     public List<Record>getRecords()
     {

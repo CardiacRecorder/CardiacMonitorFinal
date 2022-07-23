@@ -68,15 +68,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * this method is called whenever we try to add a new record
-     * @param systolic
-     * @param diastolic
-     * @param pre_stat
-     * @param pulse
-     * @param pul_stat
-     * @param date
-     * @param time
-     * @param comments
-     * @return id
+     * @param systolic value for systol
+     * @param diastolic value for diastol
+     * @param pre_stat value for pressure_status
+     * @param pulse value for pulserate
+     * @param pul_stat value for pulse_status
+     * @param date value for date
+     * @param time value for date
+     * @param comments value for commnets
+     * @return id corresponding unique id of newly created row
      */
     public long insertData(String systolic,String diastolic,String pre_stat,String pulse,String pul_stat,String date,String time,String comments)
     {
@@ -101,16 +101,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * this method is called whenever we try to update an existing record
-     * @param id
-     * @param systolic
-     * @param diastolic
-     * @param pre_stat
-     * @param pulse
-     * @param pul_stat
-     * @param date
-     * @param time
-     * @param comments
-     * @return bool
+     * @param id value for unique id of the row
+     * @param systolic value for systol
+     * @param diastolic value for diastol
+     * @param pre_stat value for pressure_status
+     * @param pulse value for pulserate
+     * @param pul_stat value for pulse_status
+     * @param date value for date
+     * @param time value for date
+     * @param comments value for commnets
+     * @return bool indicating record has been updated
      */
     public Boolean updateData(String id,String systolic,String diastolic,String pre_stat,String pulse,String pul_stat,String date,String time,String comments)
     {
@@ -138,7 +138,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * this method is called whenever we try to delete an existing record
-     * @param id
+     * @param id pf the corresponding row which will be deleted
      * @return status of executed query
      */
     public long deleteData(String id)
@@ -147,9 +147,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return  sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{id});/*returns null or zero if data is not deleted from database*/
     }
 
-    /**
-     * this method returns all the records from database
-     * @return simpleCursorAdaptor
+    /*
+      this method returns all the records from database
+      @return simpleCursorAdaptor that is all the rows from database
      */
     public SimpleCursorAdapter populateListViewFromDB() {
 
