@@ -31,7 +31,8 @@ Here sqlite database is used to store previous data.During adding any new entry 
   src="https://user-images.githubusercontent.com/107655760/180608020-733d4b21-d7a0-432c-92ba-20a85e01dd4e.png"
   alt="Alt text"
   title="Optional title"
-  style="position:flex display: inline-block; margin: 0 auto; height:500px; width:250px"><img
+  style="position:flex display: inline-block; margin: 0 auto; height:500px; width:250px">
+  <img
   src="https://user-images.githubusercontent.com/107655760/180608044-dea3cb4a-f526-4a99-8094-1ca6b89142be.png"
   alt="Alt text"
   title="Optional title"
